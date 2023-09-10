@@ -27,6 +27,7 @@ header {
   z-index: 1000;
   /* specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order. */
 }
+
 header .logo {
   color: #fff;
   font-weight: 700;
@@ -235,4 +236,88 @@ section img#mountains_front {
   margin-left: 140px;
   margin-right: 140px;
   margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  margin-right: 120px; /* add spacing between items */
+  text-align: center;
+  color: whitesmoke;
+}
+li:hover {
+  color: #7595de;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/* Remove the default blue color for active links (when clicked) */
+a:active {
+  color: inherit; /* Use the text color of the parent element */
+  text-decoration: none; /* Remove underlines or other decorations */
+}
+
+.text {
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 450px;
+  border-radius: 50%;
+  perspective: 1000px;
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Use background-image to set the image */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  /* background-image: url("./visuals/self.jpg"); */
+  background-size: cover; /* Crop and fit the image */
+  background-position: center; /* Center the image */
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+#avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
